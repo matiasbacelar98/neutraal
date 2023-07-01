@@ -5,8 +5,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -14,11 +12,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "removeComments": true,
-
-    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, // Eslint TS already checks
+    "noUnusedParameters": false, // Eslint TS already checks
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,

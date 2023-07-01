@@ -2,13 +2,38 @@
   "env": { "browser": true, "es2020": true },
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
-  "plugins": ["react-refresh"],
+  "plugins": ["react-refresh", "react", "prettier", "jsx-a11y"],
   "rules": {
-    "react-refresh/only-export-components": "warn"
+    "react-refresh/only-export-components": "warn",
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "always"],
+    "react-hooks/rules-of-hooks": "error",
+    "no-shadow": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-unused-expressions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx", ".js"] }],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "no-empty-function": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-function": "off"
   }
 }
