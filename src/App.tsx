@@ -1,7 +1,8 @@
 export default function App() {
   return (
-    <main>
-      <h1 className="text-4xl">App...</h1>
+    <main className="font-circularStd">
+      <h1 className="font-bold text-[48px]">App...</h1>
+      <p className="font-book text-[14px]">Lorem ipsum</p>
     </main>
   );
 }
