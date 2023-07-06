@@ -1,8 +1,9 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 export default function Router() {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/sign-up" />} />
       <Route path="/sign-up" element={<div>Create account</div>} />
       <Route path="/sign-in" element={<div>Log in</div>} />
       <Route path="/account/*" element={<MultiStepRouter />} />
