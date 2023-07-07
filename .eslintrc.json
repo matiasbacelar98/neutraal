@@ -8,6 +8,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -35,5 +36,22 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-function": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    },
+    "alias": {
+      "map": [
+        ["@components", "./src/components"],
+        ["@pages", "./src/components/pages"],
+        ["@layouts", "./src/components/layouts"],
+        ["@ui", "./src/components/UI"],
+        ["@assets", "./src/assets"]
+      ]
+    },
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
   }
 }
