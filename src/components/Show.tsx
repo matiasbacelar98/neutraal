@@ -2,7 +2,7 @@ import React, { Fragment, PropsWithChildren } from 'react';
 
 type ShowProps = {
   when: boolean;
-  fallback: React.ComponentType;
+  fallback: React.ReactNode;
 };
 
 export default function Show(props: PropsWithChildren<ShowProps>) {
