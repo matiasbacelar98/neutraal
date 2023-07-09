@@ -1,4 +1,4 @@
-import Layout from '@components/Layout';
+import Layout from '@layouts/Layout';
 
 const MULTISTEP_FORM_METADATA = {
   title: 'Multistep form',

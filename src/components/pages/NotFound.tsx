@@ -1,4 +1,4 @@
-import Layout from '@components/Layout';
+import Layout from '@layouts/Layout';
 import Title from '@ui/Title';
 import NotFoundImg from '@ui/NotFound';
 

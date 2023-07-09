@@ -1,4 +1,4 @@
-import Layout from '@components/Layout';
+import Layout from '@layouts/Layout';
 
 const SIGN_UP_METADATA = {
   title: 'Sign up',

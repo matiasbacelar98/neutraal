@@ -24,6 +24,7 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/components/pages/*"],
       "@ui/*": ["src/components/UI/*"],
+      "@layouts/*": ["src/components/layouts/*"],
       "@assets/*": ["src/assets/*"],
       "@constants": ["src/constants"]
     }
