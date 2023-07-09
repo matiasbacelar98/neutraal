@@ -37,3 +37,7 @@
     font-family: Circular Std, sans-serif;
   }
 }
+
+.wrapper {
+  @apply container mx-auto px-10 md:px-20;
+}

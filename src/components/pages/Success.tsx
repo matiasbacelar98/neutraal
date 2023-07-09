@@ -1,5 +1,10 @@
-import Container from '@layouts/Container';
+import Layout from '@components/Layout';
+
+const SUCCESS_METADATA = {
+  title: 'Success',
+  description: 'Success page',
+};
 
 export default function Success() {
-  return <Container>Success page</Container>;
+  return <Layout metadata={SUCCESS_METADATA}>Success page</Layout>;
 }

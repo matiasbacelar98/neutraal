@@ -1,5 +1,10 @@
-import Container from '@layouts/Container';
+import Layout from '@components/Layout';
+
+const SIGN_IN_METADATA = {
+  title: 'Sign in',
+  description: 'Sign in page',
+};
 
 export default function SignIn() {
-  return <Container>SingIn</Container>;
+  return <Layout metadata={SIGN_IN_METADATA}>SingIn</Layout>;
 }
