@@ -1,3 +1,5 @@
+import Container from '@layouts/Container';
+
 export default function SignUp() {
-  return <div>Sign Up</div>;
+  return <Container>Sign Up</Container>;
 }

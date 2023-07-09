@@ -1,3 +1,5 @@
+import Container from '@layouts/Container';
+
 export default function NotFound() {
-  return <div>Not found...</div>;
+  return <Container>Not found...</Container>;
 }

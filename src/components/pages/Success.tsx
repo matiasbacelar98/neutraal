@@ -1,3 +1,5 @@
+import Container from '@layouts/Container';
+
 export default function Success() {
-  return <div>Success page</div>;
+  return <Container>Success page</Container>;
 }

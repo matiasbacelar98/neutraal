@@ -1,3 +1,5 @@
+import Container from '@layouts/Container';
+
 export default function MultiStepForm() {
-  return <div>Multistep form...</div>;
+  return <Container>Multistep form...</Container>;
 }

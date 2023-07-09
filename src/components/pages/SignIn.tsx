@@ -1,3 +1,5 @@
+import Container from '@layouts/Container';
+
 export default function SignIn() {
-  return <div>SingIn</div>;
+  return <Container>SingIn</Container>;
 }
