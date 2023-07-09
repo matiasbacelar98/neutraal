@@ -25,6 +25,7 @@ export default {
       disabled: '#7D80AC',
       'gray-light': '#C1C1E2',
       'gray-dark': '#ACACC3',
+      error: '#EB2F2F',
     },
   },
   plugins: [],
