@@ -22,10 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/components/layouts/*"],
       "@pages/*": ["src/components/pages/*"],
       "@ui/*": ["src/components/UI/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@constants": ["src/constants"]
     }
   },
   "include": ["src"],

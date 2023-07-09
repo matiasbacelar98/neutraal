@@ -47,9 +47,9 @@
       "map": [
         ["@components", "./src/components"],
         ["@pages", "./src/components/pages"],
-        ["@layouts", "./src/components/layouts"],
         ["@ui", "./src/components/UI"],
-        ["@assets", "./src/assets"]
+        ["@assets", "./src/assets"],
+        ["@constants", "./src/constants"]
       ]
     },
     "extensions": [".js", ".jsx", ".ts", ".tsx"]
