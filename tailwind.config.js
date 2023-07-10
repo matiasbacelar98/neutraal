@@ -22,6 +22,7 @@ export default {
       text: '#1E1E1F',
       bg: '#F6F6FE',
       primary: '#434CE6',
+      'primary-hover': '#1D27D8',
       disabled: '#7D80AC',
       'gray-light': '#C1C1E2',
       'gray-dark': '#ACACC3',

@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import Show from '@components/Show';
 import Logo from '@ui/Logo';
 import { SignUpQuestion, LogInQuestion } from '@ui/Questions';
-import LogoutBtn from '@ui/LogoutBtn';
+import { LogoutBtn } from '@ui/Buttons';
 import { paths } from '@constants';
 
 const AUTH = false;

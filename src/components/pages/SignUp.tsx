@@ -6,5 +6,9 @@ const SIGN_UP_METADATA = {
 };
 
 export default function SignUp() {
-  return <Layout metadata={SIGN_UP_METADATA}>Sign Up</Layout>;
+  return (
+    <Layout metadata={SIGN_UP_METADATA}>
+      <span>Sign Up</span>
+    </Layout>
+  );
 }
