@@ -6,6 +6,7 @@ export default {
       circularStd: ['Circular Std', 'sans-serif'],
     },
     fontSize: {
+      xsm: '0.75rem', // 12px
       sm: '0.875rem', // 14px
       base: '1rem', // 16px
       md: '1.125rem', // 18px
