@@ -44,27 +44,29 @@ export function PasswordInput(props: Input) {
         onChange={onChange}
       />
 
-      <Show
-        when={isVisible}
-        fallback={
-          <button
-            className="absolute top-2/4 right-0 -translate-y-1/2 mr-1 focus:border-primary rounded"
-            type="button"
-            onClick={() => setIsVisible(true)}
-          >
-            <EyeInvisibleIcon />
-          </button>
-        }
-      >
-        <button
-          className="absolute top-2/4 right-0 -translate-y-1/2 mr-1 focus:border-primary rounded"
-          type="button"
-          onClick={() => setIsVisible(false)}
-        >
-          <EyeVisibleIcon />
-        </button>
+      <Show when={isVisible} fallback={<EyeBtn onClick={() => setIsVisible(true)} />}>
+        <EyeBtn visible onClick={() => setIsVisible(false)} />
       </Show>
     </div>
+  );
+}
+
+type EyeBtnProps = {
+  onClick: () => void;
+  visible?: boolean;
+};
+
+function EyeBtn({ onClick, visible = false }: EyeBtnProps) {
+  return (
+    <button
+      className="absolute top-2/4 right-0 -translate-y-1/2 mr-1 focus:border-primary rounded"
+      type="button"
+      onClick={onClick}
+    >
+      <Show when={visible} fallback={<EyeInvisibleIcon />}>
+        <EyeVisibleIcon />
+      </Show>
+    </button>
   );
 }
 
