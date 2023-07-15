@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Show from '@components/Show';
-import { EyeVisibleIcon, EyeInvisibleIcon, CheckIcon } from '@ui/Icons';
+import { EyeVisibleIcon, EyeInvisibleIcon } from '@ui/Icons';
 
 type Input = {
   value: string;
@@ -15,8 +15,10 @@ export function EmailInput(props: Input) {
 
   return (
     <input
-      className="h-10 w-full pl-1 border rounded font-book text-base text-text bg-bg
-    border-gray-light transition duration-300 focus:outline-transparent focus:border-primary"
+      className="
+      w-full h-10 pl-2 pr-8 font-book text-text bg-bg text-base
+      border-2 border-gray-light rounded transition duration-300
+    focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
       type="email"
       value={value}
       id={id}
@@ -34,9 +36,12 @@ export function PasswordInput(props: Input) {
   return (
     <div className="relative">
       <input
-        className={`h-10 w-full pl-1 border rounded font-book text-text bg-bg
-      border-gray-light transition duration-300 focus:outline-transparent focus:border-primary
-        ${isVisible ? 'text-base' : 'text-xsm'}`}
+        className={`
+        w-full h-10 pl-2 pr-8 font-book text-text bg-bg
+        border-2 border-gray-light rounded transition duration-300
+        focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary
+        ${isVisible ? 'text-base' : 'text-xsm'}
+        `}
         type={isVisible ? 'text' : 'password'}
         id={id}
         value={value}
@@ -59,7 +64,7 @@ type EyeBtnProps = {
 function EyeBtn({ onClick, visible = false }: EyeBtnProps) {
   return (
     <button
-      className="absolute top-2/4 right-0 -translate-y-1/2 mr-1 focus:border-primary rounded"
+      className="absolute top-2/4 right-0 -translate-y-1/2 mr-2 focus:border-primary rounded"
       type="button"
       onClick={onClick}
     >
@@ -82,24 +87,16 @@ export function CheckboxInput(props: CheckboxInput) {
   const { checked, name, id, onChange } = props;
 
   return (
-    <div className="relative w-4 h-4">
-      <input
-        id={id}
-        type="checkbox"
-        name={name}
-        checked={checked}
-        className="
-          appearance-none w-full h-full border rounded bg-bg border-gray-light transition-colors duration-150
-        checked:bg-primary checked:border-0
-        focus:ring-primary"
-        onChange={onChange}
-      />
-
-      <Show when={checked} fallback={null}>
-        <div className="absolute top-2/4 right-0 -translate-y-1/2 pointer-events-none">
-          <CheckIcon />
-        </div>
-      </Show>
-    </div>
+    <input
+      type="checkbox"
+      id={id}
+      name={name}
+      checked={checked}
+      onChange={onChange}
+      className="ring-0
+      w-4 h-4 rounded border-2 border-gray-light
+    text-primary focus:border-primary
+      transition-colors duration-150"
+    />
   );
 }

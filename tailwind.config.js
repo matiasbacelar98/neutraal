@@ -1,3 +1,5 @@
+import tailwindForms from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -28,7 +30,10 @@ export default {
       'gray-light': '#C1C1E2',
       'gray-dark': '#ACACC3',
       error: '#EB2F2F',
+      gray: {
+        500: '#1E1E1F', // Select arrow color
+      },
     },
   },
-  plugins: [],
+  plugins: [tailwindForms],
 };

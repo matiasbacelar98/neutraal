@@ -41,3 +41,8 @@
 .wrapper {
   @apply container mx-auto px-10 md:px-20;
 }
+
+/* Clean ring for checkbox */
+input[type='checkbox'] {
+  --tw-ring-shadow: 0 0 #000 !important;
+}

@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { IconContext } from 'react-icons';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { BsCheck } from 'react-icons/bs';
 
 export function EyeVisibleIcon() {
   return (
@@ -16,14 +15,6 @@ export function EyeInvisibleIcon() {
     <CustomIcon>
       <AiOutlineEyeInvisible />
     </CustomIcon>
-  );
-}
-
-export function CheckIcon() {
-  return (
-    <IconContext.Provider value={{ className: 'text-md fill-bg' }}>
-      <BsCheck />
-    </IconContext.Provider>
   );
 }
 
