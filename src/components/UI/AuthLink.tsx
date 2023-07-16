@@ -9,7 +9,10 @@ export default function AuthLink(props: PropsWithChildren<AuthLinkProps>) {
   const { children, path } = props;
 
   return (
-    <Link to={path} className="text-primary font-base font-bold underline">
+    <Link
+      to={path}
+      className="text-primary font-base font-bold underline focus:rounded focus:border-primary"
+    >
       {children}
     </Link>
   );

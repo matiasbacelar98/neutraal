@@ -46,7 +46,14 @@ export function LogoutBtn(props: Btn) {
   const { handleClick } = props;
 
   return (
-    <button type="button" className="font-base font-book text-error" onClick={handleClick}>
+    <button
+      type="button"
+      className="
+      font-base font-book text-error
+      focus-visible:border focus-visible:border-error
+      focus-visible:outline-none focus-visible:rounded"
+      onClick={handleClick}
+    >
       Log out
     </button>
   );
