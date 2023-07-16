@@ -34,6 +34,11 @@ export default {
         500: '#1E1E1F', // Select arrow color
       },
     },
+    extend: {
+      maxWidth: {
+        mds: '25rem', // 400px
+      },
+    },
   },
   plugins: [tailwindForms],
 };

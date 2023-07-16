@@ -1,5 +1,5 @@
 import AuthLink from '@ui/AuthLink';
-import Parragraph from '@ui/Parragraph';
+import { Parragraph } from '@ui/Typography';
 
 export function LogInQuestion() {
   return (

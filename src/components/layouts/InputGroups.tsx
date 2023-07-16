@@ -1,11 +1,32 @@
-import { PropsWithChildren } from 'react';
+import React from 'react';
 
-export function InputGroup(props: PropsWithChildren) {
+type InputGroupProps = {
+  children: React.ReactNode[];
+};
+
+export function InputGroup(props: InputGroupProps) {
   const { children } = props;
-  return <div className="w-full space-y-3">{children}</div>;
+  const labelChildren = props.children[0];
+  const inputAndErrorChildren = children.slice(1);
+
+  return (
+    <div className="w-full space-y-1">
+      {labelChildren}
+      <div className="space-y-3">{inputAndErrorChildren}</div>
+    </div>
+  );
 }
 
-export function CheckboxGroup(props: PropsWithChildren) {
+export function CheckboxGroup(props: InputGroupProps) {
   const { children } = props;
-  return <div className="w-full space-x-3">{children}</div>;
+
+  const inputAndLabelChildren = children.slice(0, 2);
+  const errorChildren = props.children[2];
+
+  return (
+    <div className="w-full space-y-3">
+      <div className="flex items-center space-x-3">{inputAndLabelChildren}</div>
+      {errorChildren}
+    </div>
+  );
 }

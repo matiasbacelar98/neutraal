@@ -1,5 +1,5 @@
 import Layout from '@layouts/Layout';
-import Title from '@ui/Title';
+import { Title } from '@ui/Typography';
 import NotFoundImg from '@ui/NotFound';
 
 const NOT_FOUND_METADATA = {

@@ -15,7 +15,7 @@ export default function Header() {
     <header className="wrapper py-6 md:py-10 flex items-center justify-between">
       <Logo />
 
-      <Show when={!AUTH} fallback={<LogoutBtn handleClick={() => console.log('logout')} />}>
+      <Show when={!AUTH} fallback={<LogoutBtn onClick={() => console.log('logout')} />}>
         <Show when={isSignUpRoute} fallback={<SignUpQuestion />}>
           <LogInQuestion />
         </Show>
