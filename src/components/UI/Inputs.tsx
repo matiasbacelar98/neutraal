@@ -7,7 +7,7 @@ import Show from '@components/Show';
 import { EyeVisibleIcon, EyeInvisibleIcon } from '@ui/Icons';
 import { FormTypes } from '@types';
 
-interface FormSignInProps extends ComponentProps<'input'> {
+interface InputProps extends ComponentProps<'input'> {
   register: UseFormRegister<FormTypes>;
   options: RegisterOptions;
   name: Path<FormTypes>;
@@ -15,7 +15,7 @@ interface FormSignInProps extends ComponentProps<'input'> {
 }
 
 //-------- Email input --------//
-export function EmailInput({ register, options, name, id }: FormSignInProps) {
+export function EmailInput({ register, options, name, id }: InputProps) {
   return (
     <input
       className="
@@ -30,7 +30,7 @@ export function EmailInput({ register, options, name, id }: FormSignInProps) {
 }
 
 //------- Password input --------//
-export function PasswordInput({ register, options, name, id }: FormSignInProps) {
+export function PasswordInput({ register, options, name, id }: InputProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -74,23 +74,12 @@ function EyeBtn({ onClick, visible = false }: EyeBtnProps) {
 }
 
 //------- Checkbox input -------//
-type CheckboxInput = {
-  checked: boolean;
-  name: string;
-  id: string;
-  onChange: () => void;
-};
-
-export function CheckboxInput(props: CheckboxInput) {
-  const { checked, name, id, onChange } = props;
-
+export function CheckboxInput({ register, name, options, id }: InputProps) {
   return (
     <input
       type="checkbox"
       id={id}
-      name={name}
-      checked={checked}
-      onChange={onChange}
+      {...register(name, options)}
       className="ring-0
       w-4 h-4 rounded border-2 border-gray-light
     text-primary focus:border-primary
