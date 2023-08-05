@@ -26,7 +26,8 @@
       "@ui/*": ["src/components/UI/*"],
       "@layouts/*": ["src/components/layouts/*"],
       "@assets/*": ["src/assets/*"],
-      "@constants": ["src/constants"]
+      "@constants": ["src/constants"],
+      "@types": ["src/types"]
     }
   },
   "include": ["src"],

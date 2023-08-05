@@ -1,37 +1,37 @@
 import { useState } from 'react';
+import type { ComponentProps } from 'react';
+
+import { UseFormRegister, RegisterOptions, Path } from 'react-hook-form';
+
 import Show from '@components/Show';
 import { EyeVisibleIcon, EyeInvisibleIcon } from '@ui/Icons';
+import { FormTypes } from '@types';
 
-type Input = {
-  value: string;
-  name: string;
+interface FormSignInProps extends ComponentProps<'input'> {
+  register: UseFormRegister<FormTypes>;
+  options: RegisterOptions;
+  name: Path<FormTypes>;
   id: string;
-  onChange: () => void;
-};
+}
 
 //-------- Email input --------//
-export function EmailInput(props: Input) {
-  const { value, id, name, onChange } = props;
-
+export function EmailInput({ register, options, name, id }: FormSignInProps) {
   return (
     <input
       className="
-      w-full h-10 pl-2 pr-8 font-book text-text bg-bg text-base
-      border-2 border-gray-light rounded transition duration-300
-    focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+    w-full h-10 pl-2 pr-8 font-book text-text bg-bg text-base
+    border-2 border-gray-light rounded transition duration-300
+  focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
       type="email"
-      value={value}
       id={id}
-      name={name}
-      onChange={onChange}
+      {...register(name, options)}
     />
   );
 }
 
 //------- Password input --------//
-export function PasswordInput(props: Input) {
+export function PasswordInput({ register, options, name, id }: FormSignInProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const { value, id, name, onChange } = props;
 
   return (
     <div className="relative">
@@ -42,11 +42,9 @@ export function PasswordInput(props: Input) {
         focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary
         ${isVisible ? 'text-base' : 'text-xsm'}
         `}
-        type={isVisible ? 'text' : 'password'}
         id={id}
-        value={value}
-        name={name}
-        onChange={onChange}
+        type={isVisible ? 'text' : 'password'}
+        {...register(name, options)}
       />
 
       <Show when={isVisible} fallback={<EyeBtn onClick={() => setIsVisible(true)} />}>

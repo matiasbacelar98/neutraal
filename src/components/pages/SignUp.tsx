@@ -1,5 +1,4 @@
 import Layout from '@layouts/Layout';
-import Form from '@components/Form';
 import { Title, Parragraph } from '@ui/Typography';
 import { GoogleBtn } from '@ui/Buttons';
 
@@ -16,7 +15,7 @@ export default function SignUp() {
           <Title>Create account</Title>
           <GoogleBtn onClick={() => console.log('create-account')}>Sign up with google</GoogleBtn>
           <Parragraph>or</Parragraph>
-          <Form isSignIn onSubmit={() => console.log('create-account')} />
+          <p>FORM - create-account</p>
         </div>
       </section>
     </Layout>

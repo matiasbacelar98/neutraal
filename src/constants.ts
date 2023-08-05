@@ -9,3 +9,6 @@ export const paths = new Map([
   ['success', '/success'],
   ['not-found', '*'],
 ]);
+
+// eslint-disable-next-line
+export const EMAIL_REGEX = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/;
