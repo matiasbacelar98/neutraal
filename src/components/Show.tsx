@@ -1,7 +1,7 @@
 import React, { Fragment, PropsWithChildren } from 'react';
 
 type ShowProps = {
-  when: boolean;
+  when: boolean | null;
   fallback: React.ReactNode;
 };
 

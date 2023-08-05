@@ -72,7 +72,7 @@ function SignInForm() {
                 return fieldValue !== '' || 'Password is required';
               },
               checkLength: fieldValue => {
-                return fieldValue.length >= 3 || 'The password needs to be at least 3 characters';
+                return fieldValue.length >= 6 || 'The password needs to be at least 6 characters';
               },
             },
           }}

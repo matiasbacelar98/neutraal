@@ -27,7 +27,10 @@
       "@layouts/*": ["src/components/layouts/*"],
       "@assets/*": ["src/assets/*"],
       "@constants": ["src/constants"],
-      "@types": ["src/types"]
+      "@types": ["src/types"],
+      "@utils": ["src/utils"],
+      "@services/*": ["src/services/*"],
+      "@contexts/*": ["src/contexts/*"]
     }
   },
   "include": ["src"],

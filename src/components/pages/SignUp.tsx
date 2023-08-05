@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import Layout from '@layouts/Layout';
@@ -9,8 +10,12 @@ import { EmailInput, PasswordInput, CheckboxInput } from '@ui/Inputs';
 import Label from '@ui/Label';
 import ErrorMessage from '@ui/ErrorMessage';
 
+import { supabase } from '@services/supabase';
+import { useUserContext } from '@contexts/UserContext';
+
 import { EMAIL_REGEX } from '@constants';
 import { FormTypes } from '@types';
+import { Popup } from '@utils';
 
 const SIGN_UP_METADATA = {
   title: 'Sign up',
@@ -23,7 +28,9 @@ export default function SignUp() {
       <section className="flex flex-col items-center justify-center">
         <div className="w-full max-w-mds space-y-10 flex flex-col items-center">
           <Title>Create account</Title>
-          <GoogleBtn onClick={() => console.log('create-account')}>Sign up with google</GoogleBtn>
+          <GoogleBtn onClick={() => console.log('create account google')}>
+            Sign up with google
+          </GoogleBtn>
           <Parragraph>or</Parragraph>
           <SignUpForm />
         </div>
@@ -35,11 +42,42 @@ export default function SignUp() {
 //---------- Components ----------//
 function SignUpForm() {
   const form = useForm<FormTypes>({ mode: 'onTouched' });
-  const { register, formState, handleSubmit } = form;
+  const { register, formState, reset, handleSubmit } = form;
   const { errors, isDirty, isValid } = formState;
 
-  function onSubmit(data: FormTypes): void {
-    console.log(data);
+  const { updateUser } = useUserContext();
+
+  const navigate = useNavigate();
+
+  // eslint-disable-next-line
+  async function onSubmit(data: FormTypes): Promise<any> {
+    const { error } = await supabase.auth.signUp({
+      email: data.email,
+      password: data.password,
+    });
+
+    if (error) {
+      Popup({
+        type: 'error',
+        title: 'Error',
+        text: 'Please try again later',
+      });
+    } else {
+      Popup({
+        type: 'success',
+        title: 'Success',
+        text: 'Account created successfully',
+      }).then(() => {
+        // Update user auth
+        updateUser(true);
+
+        // Reset form fields
+        reset();
+
+        // Navigate to
+        navigate('/account/multistep-form');
+      });
+    }
   }
 
   return (
@@ -73,7 +111,7 @@ function SignUpForm() {
                 return fieldValue !== '' || 'Password is required';
               },
               checkLength: fieldValue => {
-                return fieldValue.length >= 3 || 'The password needs to be at least 3 characters';
+                return fieldValue.length >= 6 || 'The password needs to be at least 6 characters';
               },
             },
           }}

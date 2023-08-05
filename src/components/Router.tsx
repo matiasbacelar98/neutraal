@@ -1,18 +1,33 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+
 import SignUp from '@pages/SignUp';
 import SignIn from '@pages/SignIn';
 import MultiStepForm from '@pages/MultiStepForm';
 import Success from '@pages/Success';
 import NotFound from '@pages/NotFound';
+
+import ProtectedRoute from '@components/ProtectedRoute';
+
+import { useUserContext } from '@contexts/UserContext';
+
 import { paths } from '@constants';
 
 export default function Router() {
+  const { user } = useUserContext();
+
   return (
     <Routes>
       <Route path="/" element={<Navigate to={paths.get('sign-up') || ''} />} />
       <Route path={paths.get('sign-up')} element={<SignUp />} />
       <Route path={paths.get('sign-in')} element={<SignIn />} />
-      <Route path={`${paths.get('account')}/*`} element={<MultiStepRouter />} />
+      <Route
+        path={`${paths.get('account')}/*`}
+        element={
+          <ProtectedRoute user={user}>
+            <MultiStepRouter />
+          </ProtectedRoute>
+        }
+      />
       <Route path={paths.get('not-found')} element={<NotFound />} />
     </Routes>
   );
