@@ -1,6 +1,5 @@
-import Layout from '@layouts/Layout';
-import { Title } from '@ui/Typography';
-import NotFoundImg from '@ui/NotFound';
+import { Layout } from '@layouts';
+import { Title, NotFound as NotFoundImg } from '@ui';
 
 const NOT_FOUND_METADATA = {
   title: 'Not found',

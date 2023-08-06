@@ -1,7 +1,6 @@
 import { Fragment, PropsWithChildren } from 'react';
-import Head from '@components/Head';
-import Header from '@components/Header';
-import Footer from '@ui/Footer';
+import { Head, Header } from '@components';
+import { Footer } from '@ui';
 
 type LayoutProps = {
   metadata: {

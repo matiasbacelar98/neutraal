@@ -21,16 +21,16 @@
     "noImplicitReturns": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/components/pages/*"],
-      "@ui/*": ["src/components/UI/*"],
-      "@layouts/*": ["src/components/layouts/*"],
+      "@components": ["src/components"],
+      "@pages": ["src/components/pages"],
+      "@ui": ["src/components/UI"],
+      "@layouts": ["src/components/layouts"],
+      "@services/*": ["src/services/*"],
+      "@contexts/*": ["src/contexts/*"],
       "@assets/*": ["src/assets/*"],
       "@constants": ["src/constants"],
       "@types": ["src/types"],
-      "@utils": ["src/utils"],
-      "@services/*": ["src/services/*"],
-      "@contexts/*": ["src/contexts/*"]
+      "@utils": ["src/utils"]
     }
   },
   "include": ["src"],

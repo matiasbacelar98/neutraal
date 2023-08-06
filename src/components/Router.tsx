@@ -1,15 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-
-import SignUp from '@pages/SignUp';
-import SignIn from '@pages/SignIn';
-import MultiStepForm from '@pages/MultiStepForm';
-import Success from '@pages/Success';
-import NotFound from '@pages/NotFound';
-
-import ProtectedRoute from '@components/ProtectedRoute';
-
+import { SignUp, SignIn, MultiStepForm, Success, NotFound } from '@pages';
+import { ProtectedRoute } from '@components';
 import { useUserContext } from '@contexts/UserContext';
-
 import { paths } from '@constants';
 
 export default function Router() {

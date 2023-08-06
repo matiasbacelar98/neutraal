@@ -1,4 +1,4 @@
-import Copyright from '@ui/Copyright';
+import { Copyright } from '@ui';
 
 export default function Footer() {
   return (

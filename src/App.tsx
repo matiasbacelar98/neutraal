@@ -1,4 +1,4 @@
-import Router from '@components/Router';
+import { Router } from '@components';
 
 export default function App() {
   return <Router />;

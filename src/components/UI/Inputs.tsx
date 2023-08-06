@@ -3,8 +3,9 @@ import type { ComponentProps } from 'react';
 
 import { UseFormRegister, RegisterOptions, Path } from 'react-hook-form';
 
-import Show from '@components/Show';
-import { EyeVisibleIcon, EyeInvisibleIcon } from '@ui/Icons';
+import { Show } from '@components';
+import { EyeVisibleIcon, EyeInvisibleIcon } from '@ui';
+
 import { FormTypes } from '@types';
 
 interface InputProps extends ComponentProps<'input'> {

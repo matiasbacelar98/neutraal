@@ -1,8 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import Show from '@components/Show';
-import Logo from '@ui/Logo';
-import { SignUpQuestion, LogInQuestion } from '@ui/Questions';
-import { LogoutBtn } from '@ui/Buttons';
+import { Show } from '@components';
+import { Logo, SignUpQuestion, LogInQuestion, LogoutBtn } from '@ui';
 import { paths } from '@constants';
 import { useUserContext } from '@contexts/UserContext';
 

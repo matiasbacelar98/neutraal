@@ -1,6 +1,5 @@
-import Layout from '@layouts/Layout';
-import { Title } from '@ui/Typography';
-import SuccessImg from '@ui/Success';
+import { Layout } from '@layouts';
+import { Title, Success as SuccessImg } from '@ui';
 
 const SUCCESS_METADATA = {
   title: 'Success',
