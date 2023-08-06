@@ -1,16 +1,47 @@
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+
 import { InputGroup } from '@layouts';
 import { Button, EmailInput, PasswordInput, Label, ErrorMessage } from '@ui';
+
+import { supabase } from '@services/supabase';
+import { useUserContext } from '@contexts/UserContext';
+
 import { EMAIL_REGEX } from '@constants';
 import { FormTypes } from '@types';
+import { Popup } from '@utils';
 
 export default function SignInForm() {
   const form = useForm<FormTypes>({ mode: 'onTouched' });
-  const { register, formState, handleSubmit } = form;
+  const { register, formState, reset, handleSubmit } = form;
   const { errors, isDirty, isValid } = formState;
 
-  function onSubmit(data: FormTypes): void {
-    console.log(data);
+  const { updateUser } = useUserContext();
+  const navigate = useNavigate();
+
+  // eslint-disable-next-line
+  async function onSubmit(data: FormTypes): Promise<any> {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
+    });
+
+    if (error) {
+      Popup({
+        type: 'error',
+        title: 'Error',
+        text: 'Please try again later',
+      });
+    } else {
+      // Reset form fields
+      reset();
+
+      // Update user auth
+      updateUser(true);
+
+      // Navigate to
+      navigate('/account/multistep-form');
+    }
   }
 
   return (
