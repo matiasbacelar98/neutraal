@@ -10,8 +10,28 @@ export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to={paths.get('sign-up') || ''} />} />
-      <Route path={paths.get('sign-up')} element={<SignUp />} />
-      <Route path={paths.get('sign-in')} element={<SignIn />} />
+      <Route
+        path={paths.get('sign-up')}
+        element={
+          <ProtectedRoute
+            user={!user}
+            redirectPath={`${paths.get('account')}${paths.get('multistep-form')}`}
+          >
+            <SignUp />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path={paths.get('sign-in')}
+        element={
+          <ProtectedRoute
+            user={!user}
+            redirectPath={`${paths.get('account')}${paths.get('multistep-form')}`}
+          >
+            <SignIn />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path={`${paths.get('account')}/*`}
         element={
