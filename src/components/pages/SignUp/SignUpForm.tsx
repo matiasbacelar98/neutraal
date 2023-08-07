@@ -5,7 +5,6 @@ import { InputGroup, CheckboxGroup } from '@layouts';
 import { Button, EmailInput, PasswordInput, CheckboxInput, Label, ErrorMessage } from '@ui';
 
 import { supabase } from '@services/supabase';
-import { useUserContext } from '@contexts/UserContext';
 
 import { EMAIL_REGEX } from '@constants';
 import { FormTypes } from '@types';
@@ -16,12 +15,9 @@ export default function SignUpForm() {
   const { register, formState, reset, handleSubmit } = form;
   const { errors, isDirty, isValid } = formState;
 
-  const { updateUser } = useUserContext();
-
   const navigate = useNavigate();
 
-  // eslint-disable-next-line
-  async function onSubmit(data: FormTypes): Promise<any> {
+  async function onSubmit(data: FormTypes): Promise<void> {
     const { error } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
@@ -39,9 +35,6 @@ export default function SignUpForm() {
         title: 'Success',
         text: 'Account created successfully',
       }).then(() => {
-        // Update user auth
-        updateUser(true);
-
         // Reset form fields
         reset();
 

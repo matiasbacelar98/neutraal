@@ -5,7 +5,6 @@ import { InputGroup } from '@layouts';
 import { Button, EmailInput, PasswordInput, Label, ErrorMessage } from '@ui';
 
 import { supabase } from '@services/supabase';
-import { useUserContext } from '@contexts/UserContext';
 
 import { EMAIL_REGEX } from '@constants';
 import { FormTypes } from '@types';
@@ -16,11 +15,9 @@ export default function SignInForm() {
   const { register, formState, reset, handleSubmit } = form;
   const { errors, isDirty, isValid } = formState;
 
-  const { updateUser } = useUserContext();
   const navigate = useNavigate();
 
-  // eslint-disable-next-line
-  async function onSubmit(data: FormTypes): Promise<any> {
+  async function onSubmit(data: FormTypes): Promise<void> {
     const { error } = await supabase.auth.signInWithPassword({
       email: data.email,
       password: data.password,
@@ -35,9 +32,6 @@ export default function SignInForm() {
     } else {
       // Reset form fields
       reset();
-
-      // Update user auth
-      updateUser(true);
 
       // Navigate to
       navigate('/account/multistep-form');
