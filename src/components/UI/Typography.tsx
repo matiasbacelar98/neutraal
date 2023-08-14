@@ -9,3 +9,12 @@ export function Parragraph(props: PropsWithChildren) {
   const { children } = props;
   return <p className="font-base font-book text-text">{children}</p>;
 }
+
+type StepTextProps = {
+  color: string;
+};
+
+export function StepText(props: PropsWithChildren<StepTextProps>) {
+  const { color, children } = props;
+  return <p className={`font-sm font-book ${color}`}>{children}</p>;
+}

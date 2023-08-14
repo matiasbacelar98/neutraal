@@ -11,4 +11,5 @@ export { default as Success } from './Success';
 export { default as NotFound } from './NotFound';
 export { LogInQuestion, SignUpQuestion } from './Questions';
 export { default as Select } from './Select';
-export { Title, Parragraph } from './Typography';
+export { Title, Parragraph, StepText } from './Typography';
+export { default as StepsIndicator } from './StepsIndicator';

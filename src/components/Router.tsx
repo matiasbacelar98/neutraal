@@ -15,7 +15,7 @@ export default function Router() {
         element={
           <ProtectedRoute
             user={!user}
-            redirectPath={`${paths.get('account')}${paths.get('multistep-form')}`}
+            redirectPath={`${paths.get('account')}/${paths.get('details')}`}
           >
             <SignUp />
           </ProtectedRoute>
@@ -26,7 +26,7 @@ export default function Router() {
         element={
           <ProtectedRoute
             user={!user}
-            redirectPath={`${paths.get('account')}${paths.get('multistep-form')}`}
+            redirectPath={`${paths.get('account')}/${paths.get('details')}`}
           >
             <SignIn />
           </ProtectedRoute>
@@ -48,8 +48,8 @@ export default function Router() {
 function MultiStepRouter() {
   return (
     <Routes>
-      <Route path={paths.get('multistep-form')} element={<MultiStepForm />}>
-        <Route path={paths.get('details')} element={<div>Details component</div>} />
+      <Route element={<MultiStepForm />}>
+        <Route path={paths.get('details')} element={<div />} />
         <Route path={paths.get('plan')} element={<div>Plan component</div>} />
         <Route path={paths.get('confirm')} element={<div>Confirm component</div>} />
       </Route>
